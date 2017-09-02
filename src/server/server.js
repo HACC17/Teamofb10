@@ -1,7 +1,7 @@
 var express         = require('express');
 var app             = express();
 // var mongoose        = require('mongoose');
-var mysql           = require('mysql');
+// var mysql           = require('mysql');
 var morgan          = require('morgan');
 var bodyParser      = require('body-parser');
 var methodOverride  = require('method-override');
@@ -10,22 +10,22 @@ var methodOverride  = require('method-override');
 //     useMongoClient: true
 // });
 
-var dbConnect = mysql.createConnection({
-    host: 'localhost',    
-    user: 'admin',
-    password: 'admin',
-    database: 'volunteers'
-});
+// var dbConnect = mysql.createConnection({
+//     host: 'localhost',    
+//     user: 'admin',
+//     password: 'admin',
+//     database: 'volunteers'
+// });
 
-dbConnect.connect(function(err){
-    if(!err) {
-        console.log("Database is connected ...");    
-    } else {
-        console.log("Error connecting database ...");    
-    }
-});
+// dbConnect.connect(function(err){
+//     if(!err) {
+//         console.log("Database is connected ...");    
+//     } else {
+//         console.log("Error connecting database ...");    
+//     }
+// });
 
-app.use(express.static(__dirname + '/public'));
+app.use("/", express.static(__dirname));
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
