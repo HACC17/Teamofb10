@@ -4,26 +4,23 @@ Our vision for EVSA is a system where volunteers can signup to become election o
 
 ## Getting Started
 
-This project uses AngularJS and NodeJS. All the required packages are in the package.json file.
+This project uses AngularJS and NodeJS. All the required packages are in the package.json file. The installation steps below assumes that the user is using Mac OSX. Commands for running this project on a Windows OS should be similar when you download the Git terminal from here (<https://git-scm.com/downloads>).
 
 ### Prerequisites
 
-Following softwares
+* Install Homebrew
+* Install NodeJS globally using brew command - installing NodeJS will also install npm
 
 ```
-Give examples
+Open Terminal app (Mac OSX)
+Type ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install node
 ```
 
 ### Installing
 
-Install node globally
-Clone the project from Github using SSH or HTTPS
-Install all dependencies
-Run the server using nodemon
+* Clone the project from Github using SSH or HTTPS
 
-```
-npm install -g node
-```
 
 * Using SSH
 
@@ -37,9 +34,18 @@ git clone git@github.com:HACC17/Teamofb10.git
 git clone https://github.com/HACC17/Teamofb10.git
 ```
 
+* Install all dependencies
+* Run the server using nodemon
+
 ```
 npm install
 nodemon server.js 
+```
+
+* Open browser to view project
+
+```
+Type in http://localhost:8080
 ```
 
 ## Authors
