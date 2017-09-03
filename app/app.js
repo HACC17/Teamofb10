@@ -11,19 +11,19 @@
         $routeProvider
             .when('/', {
                 controller: 'DashboardController',
-                templateUrl: '/src/app/dashboard/dashboard.view.html',
+                templateUrl: 'app/dashboard/dashboard.view.html',
                 controllerAs: 'vm'
             })
 
             .when('/login', {
                 controller: 'LoginController',
-                templateUrl: '/src/app/login/login.view.html',
+                templateUrl: 'app/login/login.view.html',
                 controllerAs: 'vm'
             })
 
             .when('/register', {
                 controller: 'RegisterController',
-                templateUrl: '/src/app/register/register.view.html',
+                templateUrl: 'app/register/register.view.html',
                 controllerAs: 'vm'
             })
 
