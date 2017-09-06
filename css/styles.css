@@ -97,12 +97,15 @@ body {
 
 /* Custom */
 
-.main-color-bg {
+.main-dashboard-color {
     background-color: #009900 !important;
     border-color: #4ec02b !important;
     color: #ffffff !important;
 }
 
+.main-body-color {
+    background-color: #ffffff !important;
+}
 
 /* Header */
 
@@ -142,6 +145,26 @@ body {
     text-align: center;
     padding: 30px;
     margin-top: 30px;
+}
+
+/* Custom Media */
+@media (max-width: 767px) {
+    .form-inline > .checkbox {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .form-inline .form-control {
+        width: auto;
+        display: inline-block;
+    }
+    .form-inline label {
+        margin-right: 5px;
+    }
+    .form-inline .form-group {
+        display: inline-block;
+        margin-bottom: 0;
+        vertical-align: middle;
+    }
 }
 
 @media (max-width: 575px) {

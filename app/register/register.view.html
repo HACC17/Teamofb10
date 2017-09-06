@@ -1,74 +1,137 @@
+<!-- <div class="col-xs-12 col-sm-12 col-md-9 col-lg-12 col-sm-offset-0 col-md-offset-2 col-lg-offset-3"> -->
 <div class="col-md-6 col-md-offset-3">
-    <h2>Register</h2>
-    <form name="form" ng-submit="vm.register()" role="form">
-        <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
-            <label for="username">First name</label>
-            <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" required />
-            <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">First name is required</span>
-        </div>
-        <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
-            <label for="username">Last name</label>
-            <input type="text" name="lastName" id="lastName" class="form-control" ng-model="vm.user.lastName" required />
-            <span ng-show="form.lastName.$dirty && form.lastName.$error.required" class="help-block">Last name is required</span>
-        </div>
-        <div class="form-group" ng-class="{ 'has-error': form.birthDate.$dirty && form.birthDate.$error.required }">
-            <label for="username">Date of Birth</label>
-            <input type="text" name="birthDate" id="birthDate" class="form-control" ng-model="vm.user.birthDate" required />
-            <span ng-show="form.birthDate.$dirty && form.birthDate.$error.required" class="help-block">Date of Birth is required</span>
-        </div>
-        <div class="form-group" ng-class="{ 'has-error': form.emailAddress.$dirty && form.emailAddress.$error.required }">
-            <label for="username">Email</label>
-            <input type="email" name="emailAddress" id="emailAddress" class="form-control" ng-model="vm.user.emailAddress" required />
-            <span ng-show="form.emailAddress.$dirty && form.emailAddress.$error.required" class="help-block">Email is required</span>
-        </div>
-        <div class="form-group" ng-class="{ 'has-error': form.primaryPhone.$dirty && form.primaryPhone.$error.required }">
-            <label for="username">Primary Phone</label>
-            <input type="phone" name="primaryPhone" id="primaryPhone" class="form-control" ng-model="vm.user.primaryPhone" required />
-            <span ng-show="form.primaryPhone.$dirty && form.primaryPhone.$error.required" class="help-block">Primary phone is required</span>
-        </div>
-        <div class="form-group">
-            <label for="username">Work Phone</label>
-            <input type="phone" name="workPhone" id="workPhone" class="form-control" ng-model="vm.user.workPhone" />            
-        </div>
-        <div class="form-group" ng-class="{ 'has-error': form.residentAddress.$dirty && form.residentAddress.$error.required }">
-            <label for="username">Resident Address</label>
-            <input type="text" name="residentAddress" id="residentAddress" class="form-control" ng-model="vm.user.residentAddress" required />
-            <span ng-show="form.residentAddress.$dirty && form.residentAddress.$error.required" class="help-block">Resident address is required</span>
-        </div>
-        <div class="form-group" ng-class="{ 'has-error': form.residentCity.$dirty && form.residentCity.$error.required }">
-            <label for="username">City</label>
-            <input type="text" name="residentCity" id="residentCity" class="form-control" ng-model="vm.user.residentCity" required />
-            <span ng-show="form.residentCity.$dirty && form.residentCity.$error.required" class="help-block">City is required</span>
-        </div>
-        <div class="form-group" ng-class="{ 'has-error': form.residentState.$dirty && form.residentState.$error.required }">
-            <label for="username">State</label>
-            <input type="text" name="residentState" id="residentState" class="form-control" ng-model="vm.user.residentState" required />
-            <span ng-show="form.residentState.$dirty && form.residentState.$error.required" class="help-block">State is required</span>
-        </div>
-        <div class="form-group" ng-class="{ 'has-error': form.residentZip.$dirty && form.residentZip.$error.required }">
-            <label for="username">Zip</label>
-            <input type="text" name="residentZip" id="residentZip" class="form-control" ng-model="vm.user.residentZip" required />
-            <span ng-show="form.residentZip.$dirty && form.residentZip.$error.required" class="help-block">Zip is required</span>
-        </div>
-        <div class="form-group" ng-class="{ 'has-error': form.county.$dirty && form.county.$error.required }">
-            <label for="username">County</label>
-            <input type="text" name="county" id="county" class="form-control" ng-model="vm.user.county" required />
-            <span ng-show="form.county.$dirty && form.county.$error.required" class="help-block">County is required</span>
-        </div>
-        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" class="form-control" ng-model="vm.user.username" required />
-            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
-        </div>
-        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password" required />
-            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
-        </div>
-        <div class="form-actions">
-            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Register</button>
-            <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-            <a href="#!/login" class="btn btn-link">Cancel</a>
-        </div>
+    <form novalidate class="form-horizontal" name="form" ng-submit="vm.register()" role="form">
+        <fieldset>
+            <legend align="center">Register</legend>
+            <div class="form-group">
+                <h5>Personal Information</h5>
+                <div class="col-6 col-md-4" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
+                    <label class="sr-only" for="username">First name</label>
+                    <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" placeholder="First Name" required />
+                    <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">First name is required</span>
+                </div>
+                <div class="col-6 col-md-4" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
+                    <label class="sr-only" for="username">Last name</label>
+                    <input type="text" name="lastName" id="lastName" class="form-control" ng-model="vm.user.lastName" placeholder="Last Name" required />
+                    <span ng-show="form.lastName.$dirty && form.lastName.$error.required" class="help-block">Last name is required</span>
+                </div>
+                <div class="col-6 col-md-4" ng-class="{ 'has-error': form.birthDate.$dirty && form.birthDate.$error.required }">
+                    <label class="sr-only" for="username">Date of Birth</label>
+                    <input type="text" name="birthDate" id="birthDate" class="form-control" ng-model="vm.user.birthDate" placeholder="Date of Birth" required />
+                    <span ng-show="form.birthDate.$dirty && form.birthDate.$error.required" class="help-block">Date of Birth is required</span>
+                </div>
+            </div>                            
+            <div class="form-group">                
+                <div class="col-6 col-md-4" ng-class="{ 'has-error': form.emailAddress.$dirty && form.emailAddress.$error.required }">
+                    <label class="sr-only" for="username">Email</label>
+                    <input type="email" name="emailAddress" id="emailAddress" class="form-control" ng-model="vm.user.emailAddress" placeholder="Email" required />
+                    <span ng-show="form.emailAddress.$dirty && form.emailAddress.$error.required" class="help-block">Email is required</span>
+                </div>            
+                <div class="col-6 col-md-4" ng-class="{ 'has-error': form.primaryPhone.$dirty && form.primaryPhone.$error.required }">
+                    <label class="sr-only" for="username">Primary Phone</label>
+                    <input type="phone" name="primaryPhone" id="primaryPhone" class="form-control" ng-model="vm.user.primaryPhone" placeholder="Primary Phone" required />
+                    <span ng-show="form.primaryPhone.$dirty && form.primaryPhone.$error.required" class="help-block">Primary phone is required</span>
+                </div>
+                <div class="col-6 col-md-4">
+                    <label class="sr-only" for="username">Work Phone</label>
+                    <input type="phone" name="workPhone" id="workPhone" class="form-control" ng-model="vm.user.workPhone" placeholder="Work Phone" />            
+                </div>
+            </div>            
+            <div ng-controller="AddressController" class="form-group">
+                <h5>Residential Address</h5>
+                <div class="col-md-12" ng-class="{ 'has-error': form.residentAddress.$dirty && form.residentAddress.$error.required }">
+                    <label class="sr-only" for="username">Resident Address</label>
+                    <input type="text" name="residentAddress" id="residentAddress" class="form-control" ng-model="vm.user.residentAddress" ng-change="sameAddress && update()" placeholder="Resident Address" required />
+                    <span ng-show="form.residentAddress.$dirty && form.residentAddress.$error.required" class="help-block">Resident address is required</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-4" ng-class="{ 'has-error': form.residentCity.$dirty && form.residentCity.$error.required }">
+                    <label class="sr-only" for="username">City</label>
+                    <input type="text" name="residentCity" id="residentCity" class="form-control" ng-model="vm.user.residentCity" ng-change="sameAddress && update()" placeholder="City" required />
+                    <span ng-show="form.residentCity.$dirty && form.residentCity.$error.required" class="help-block">City is required</span>
+                </div>
+                <div class="col-md-4" ng-class="{ 'has-error': form.residentState.$dirty && form.residentState.$error.required }">
+                    <label class="sr-only" for="username">State</label>
+                    <input type="text" name="residentState" id="residentState" class="form-control" ng-model="vm.user.residentState" ng-change="sameAddress && update()" placeholder="State" required />
+                    <span ng-show="form.residentState.$dirty && form.residentState.$error.required" class="help-block">State is required</span>
+                </div>
+                <div class="col-md-4" ng-class="{ 'has-error': form.residentZip.$dirty && form.residentZip.$error.required }">
+                    <label class="sr-only" for="username">Zip</label>
+                    <input type="text" name="residentZip" id="residentZip" class="form-control" ng-model="vm.user.residentZip" ng-change="sameAddress && update()" placeholder="Zip" required />
+                    <span ng-show="form.residentZip.$dirty && form.residentZip.$error.required" class="help-block">Zip is required</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <h5>Mailing Address</h5>
+                <div class="col-md-12" ng-class="{ 'has-error': form.mailingAddress.$dirty && form.mailingAddress.$error.required }">
+                    <label class="sr-only" for="username">Mailing Address</label>
+                    <input type="text" name="mailingAddress" id="mailingAddress" class="form-control" ng-model="vm.user.mailingAddress" ng-disabled="sameAddress" placeholder="Mailing Address" required />
+                    <span ng-show="form.mailingAddress.$dirty && form.mailingAddress.$error.required" class="help-block">Mailing address is required</span>
+                </div>
+            </div>
+            <div class="form-group" ng-disabled="sameAddress">
+                <div class="col-md-4" ng-class="{ 'has-error': form.mailingCity.$dirty && form.mailingCity.$error.required }">
+                    <label class="sr-only" for="username">City</label>
+                    <input type="text" name="mailingCity" id="mailingCity" class="form-control" ng-model="vm.user.mailingCity" ng-disabled="sameAddress" placeholder="City" required />
+                    <span ng-show="form.mailingCity.$dirty && form.mailingCity.$error.required" class="help-block">City is required</span>
+                </div>
+                <div class="col-md-4" ng-class="{ 'has-error': form.mailingState.$dirty && form.mailingState.$error.required }">
+                    <label class="sr-only" for="username">State</label>
+                    <input type="text" name="mailingState" id="mailingState" class="form-control" ng-model="vm.user.mailingState" ng-disabled="sameAddress" placeholder="State" required />
+                    <span ng-show="form.mailingState.$dirty && form.mailingState.$error.required" class="help-block">State is required</span>
+                </div>
+                <div class="col-md-4" ng-class="{ 'has-error': form.mailingZip.$dirty && form.mailingZip.$error.required }">
+                    <label class="sr-only" for="username">Zip</label>
+                    <input type="text" name="mailingZip" id="mailingZip" class="form-control" ng-model="vm.user.mailingZip" ng-disabled="sameAddress" placeholder="Zip" required />
+                    <span ng-show="form.mailingZip.$dirty && form.mailingZip.$error.required" class="help-block">Zip is required</span>
+                </div>                
+            </div>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <input type="checkbox" ng-model="sameAddress" ng-change="sameAddress && update()" /> Same as Resident Address
+                </div>
+            </div>            
+            <div class="form-group"> 
+                <div ng-class="{ 'has-error': form.county.$dirty && form.county.$error.required }">
+                    <label class="sr-only" for="username">County</label>
+                    <select name="county" id="county">
+                        <option selected="selected" value="-- Please select a county --">-- Please select a county --</option>
+                        <option value="Hawaii (County of Hawaii)">Hawaii (County of Hawaii)</option>
+                        <option value="Maui, Molokai, Lanai (County of Maui)">Maui, Molokai, Lanai (County of Maui)</option>
+                        <option value="Kauai, Niihau (County of Kauai)">Kauai, Niihau (County of Kauai)</option>
+                        <option value="Oahu (City & County of Honolulu)">Oahu (City & County of Honolulu)</option>
+                    </select>
+                    <span ng-show="form.county.$dirty && form.county.$error.required" class="help-block">County is required</span>
+                </div>
+            </div>
+            <legend align="center">Sign-up</legend>
+            <div class="form-group">
+                <div class="col-6 col-md-4" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+                    <label class="sr-only" for="username">Username</label>
+                    <input type="text" name="username" id="username" class="form-control" ng-model="vm.user.username" placeholder="Username" required />
+                    <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-6 col-md-4" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                    <label class="sr-only" for="password">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password" placeholder="Password" required />
+                    <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-6 col-md-4" ng-class="{ 'has-error': form.verifyPassword.$dirty && form.verifyPassword.$error.required }">
+                    <label class="sr-only" for="verifyPassword">Verify Password</label>
+                    <input type="verifyPassword" name="verifyPassword" id="verifyPassword" class="form-control" ng-model="vm.user.verifyPassword" placeholder="Verify Password" required />
+                    <span ng-show="form.verifyPassword.$dirty && form.verifyPassword.$error.required" class="help-block">Password is required</span>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Register</button>
+                <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                <a href="#!/login" class="btn btn-link">Cancel</a>
+            </div>
+        </fieldset>
     </form>
 </div>
