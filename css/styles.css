@@ -107,6 +107,38 @@ body {
     background-color: #ffffff !important;
 }
 
+input, label {
+    display: block;
+}
+
+.checkbox-inline {
+    float: left;
+    padding: 5px 22px;
+    word-wrap: break-word;
+}
+
+[type="checkbox"] {
+    vertical-align: middle;
+}
+
+.dropdown-inline {
+    width: 25em;
+}
+
+.dropdown-inline option {
+    width: 25em;
+}
+
+.float-left {
+    float:  left;    
+    padding-top: 10px;
+}
+
+.h5 {
+    color: #009900;
+    font-weight: bold;
+}
+
 /* Header */
 
 #header {

@@ -17,14 +17,34 @@
         };
     }
 
-    // angular
-    //     .module('app', [])
-    //     .controller('AddressController', ['$scope', function($scope) {
-    //         $scope.residentAddress = {};
-    //         $scope.mailingAddress = {};
+// var form-register = angular
+//         .module('form-register', [])
+//         .controller('AddressController', ['$scope', function($scope) {
+//             $scope.residentAddress = {};
+//             $scope.mailingAddress = {};
 
-    //         $scope.update = function(residentAddress) {
-    //             $scope.mailingAddress = angular.copy($scope.residentAddress);
-    //     };
-    // }]);
+//             $scope.update = function(residentAddress) {
+//                 $scope.mailingAddress = angular.copy($scope.residentAddress);
+//         };
+//     }]);
 })();
+
+// var form-register = angular
+//         .module('form-register', []);
+//         .controller('AddressController', function($scope) {
+
+//             $scope.residentAddress = {};
+//             $scope.mailingAddress = {};
+
+//             $scope.update = function() {
+//                 if ($scope.sameAddress) {
+//                     $scope.mailingAddress = angular.copy($scope.residentAddress);
+//                 }
+//             }
+
+//             $scope.$watch('mailingAddress', function(newValue) {
+//                 if (newValue) {
+//                     $scope.update();
+//                 }
+//             }, true);
+//         });
