@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('volunteerApp')
         .controller('RegisterController', RegisterController);
 
     RegisterController.$inject = ['UserService', '$location', '$rootScope', 'FlashService'];
@@ -10,6 +10,14 @@
         var vm = this;
 
         vm.register = register;
+        vm.residentAddress = {};
+        vm.mailingAddress = {};
+
+        function update(residentAddress) {
+            if (vm.sameAddress) {
+                vm.mailingAddress = angular.copy(vm.residentAddress);
+            }
+        }
 
         function register() {
             vm.dataLoading = true;

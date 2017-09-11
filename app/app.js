@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app', ['ngRoute', 'ngCookies'])
+        .module('volunteerApp', ['ngRoute', 'ngCookies'])
         .config(config)
         .run(run);
 
@@ -25,6 +25,11 @@
                 controller: 'RegisterController',
                 templateUrl: 'app/register/register.view.html',
                 controllerAs: 'vm'
+            })
+
+            .when('/user', {
+                controller: 'UserController',
+                templateUrl: 'app/user/user.view.html'
             })
 
             .otherwise({ redirectTo: '/login' });
